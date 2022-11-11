@@ -5,7 +5,7 @@ import { useAuthContext } from "../hooks/useAuthContext"
 import { signOut } from "firebase/auth"
 export default function Navbar() {
     const { user, dispatch } = useAuthContext()
-    console.log(user);
+    // console.log("user is :",user.data());
 
 
 
@@ -27,7 +27,7 @@ export default function Navbar() {
                 </>)}
                 {user && (
                     <>
-                        <li>Hello, {user.displayName}</li>
+                        <li>Hello {user.displayName}</li>
                         <li>
                             <button className='btn' onClick={logout}>Logout</button>
                         </li>

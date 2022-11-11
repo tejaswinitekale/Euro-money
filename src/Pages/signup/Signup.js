@@ -10,7 +10,7 @@ export default function Signup() {
     const [ password, setPassword ] = useState('')
     const [ displayName, setDisplayName] = useState('')
     const { dispatch } = useAuthContext()
-    const history = useNavigate()
+    const navigate = useNavigate()
 
     // const auth = getAuth()
     const handlesubmit =(e) =>{
@@ -20,10 +20,10 @@ export default function Signup() {
                 // console.log(result.user);
                 result.user.displayName = displayName
                 updateCurrentUser(projectAuth, result?.user)
-                console.log(result?.user);
+                console.log("result user",result?.user);
                 dispatch({type : 'LOGIN', payload: result?.user})
 
-                history('/')
+                navigate('/')
             }).catch((err) => {
                 console.log(err.message);
             }); 

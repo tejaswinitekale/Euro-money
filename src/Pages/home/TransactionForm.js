@@ -17,10 +17,7 @@ export default function TransactionForm(){
             amount : amount
         }
         try {
-            // const docRef = await setDoc(doc(db, "transcations"))
-            // console.log("Document");
-            // console.log("Document", docRef);
-
+            
             const docRef = await addDoc(collection(db, "transcations"), {
                 uid : user.uid,
                 name : name,
